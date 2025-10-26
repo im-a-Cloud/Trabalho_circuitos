@@ -1,0 +1,267 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/Cloud/Documents/UFRN/Circuitos/Trabalho_Elevadores
+Elocal_controller
+Z0 w1761337425
+Z1 DPx4 work 9 pkg_types 0 22 ;YjP1U:V4:XRY_iUQ4Mz42
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z5 dC:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT
+Z6 8C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/local_controller.vhd
+Z7 FC:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/local_controller.vhd
+l0
+L6
+VH8mE>MlhZeN1@`Rcn>K:f1
+!s100 :04mfW3ZCjmTYOgK>KTbH2
+Z8 OV;C;10.5b;63
+32
+Z9 !s110 1761520077
+!i10b 1
+Z10 !s108 1761520077.000000
+Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/local_controller.vhd|
+Z12 !s107 C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/local_controller.vhd|
+!i113 1
+Z13 o-work work -2002 -explicit
+Z14 tExplicit 1 CvgOpt 0
+Artl
+R1
+R2
+R3
+R4
+Z15 DEx4 work 16 local_controller 0 22 H8mE>MlhZeN1@`Rcn>K:f1
+l28
+L22
+V=F_DA[Oc?aYIaYNk0`UMN1
+!s100 Y1Sd@cQ[WW?7O>D?zdi;f0
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Ppkg_types
+R3
+R4
+w1761337416
+R5
+8C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/pkg_types.vhd
+FC:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/pkg_types.vhd
+l0
+L4
+V;YjP1U:V4:XRY_iUQ4Mz42
+!s100 Tgfa@zhaa0ScX5QBiGnf10
+R8
+32
+R9
+!i10b 1
+R10
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/pkg_types.vhd|
+!s107 C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/pkg_types.vhd|
+!i113 1
+R13
+R14
+Escheduler
+Z16 w1761337433
+R1
+R3
+R4
+R5
+Z17 8C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/scheduler.vhd
+Z18 FC:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/scheduler.vhd
+l0
+L5
+V`HB`GcVCX>H_VCMb^5QAP1
+!s100 HI20=IdFYI55:I:JJ@PJ<3
+R8
+32
+R9
+!i10b 1
+R10
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/scheduler.vhd|
+Z20 !s107 C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/scheduler.vhd|
+!i113 1
+R13
+R14
+Artl
+R1
+R3
+R4
+Z21 DEx4 work 9 scheduler 0 22 `HB`GcVCX>H_VCMb^5QAP1
+l18
+L16
+VY2zL7SSX_dLUC:UJlW0Pb0
+!s100 :V?YI>d8jGfBOMF<A:Gd22
+R8
+32
+R9
+!i10b 1
+R10
+R19
+R20
+!i113 1
+R13
+R14
+Eseg7_driver
+Z22 w1761337227
+R2
+R3
+R4
+R5
+Z23 8C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/seg7_driver.vhd
+Z24 FC:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/seg7_driver.vhd
+l0
+L5
+VzH;6b<Fh9KKe0fOI_<1FJ1
+!s100 ARC<;;1njUaN]:SUNRjB;2
+R8
+32
+R9
+!i10b 1
+R10
+Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/seg7_driver.vhd|
+Z26 !s107 C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/seg7_driver.vhd|
+!i113 1
+R13
+R14
+Artl
+R2
+R3
+R4
+Z27 DEx4 work 11 seg7_driver 0 22 zH;6b<Fh9KKe0fOI_<1FJ1
+l13
+L12
+VgT`04>iZXQ;BLa:h;Q:Z93
+!s100 ]08QU^U<R`S9Y6Y=YmCX=0
+R8
+32
+R9
+!i10b 1
+R10
+R25
+R26
+!i113 1
+R13
+R14
+Abehavioral
+DPx4 work 9 pkg_types 0 22 iM@FR6dE4ORSodDh46P[S1
+R2
+R3
+R4
+DEx4 work 11 seg7_driver 0 22 ?=bJn_Il>L>A8AooBIM6`2
+l15
+L13
+VJ`8E@Hb^CfKRJA`H_2R[N3
+!s100 AjK]oIe6GOF<b<f1FdP^C1
+R8
+32
+!s110 1761332982
+!i10b 1
+!s108 1761332982.000000
+R25
+R26
+!i113 1
+R13
+R14
+w1761326807
+Etb_top_level
+Z28 w1761337556
+R1
+R2
+R3
+R4
+R5
+Z29 8C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/tb_top_level.vhd
+Z30 FC:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/tb_top_level.vhd
+l0
+L6
+Vc@4XOSk_Om`GRzc0o:_4d3
+!s100 mD>DcH6[hHC^L91ee8UiC3
+R8
+32
+R9
+!i10b 1
+R10
+Z31 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/tb_top_level.vhd|
+Z32 !s107 C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/tb_top_level.vhd|
+!i113 1
+R13
+R14
+Atb
+Z33 DEx4 work 9 top_level 0 22 mDGkkCJ3:PlGEXzJ59Dk@2
+R1
+R2
+R3
+R4
+Z34 DEx4 work 12 tb_top_level 0 22 c@4XOSk_Om`GRzc0o:_4d3
+l22
+L9
+Z35 VHJPJ7NYSaH]CO48`SdBkV1
+Z36 !s100 iTz9a34:7ENX2a[<1^4>[3
+R8
+32
+R9
+!i10b 1
+R10
+R31
+R32
+!i113 1
+R13
+R14
+Etop_level
+Z37 w1761337521
+R1
+R2
+R3
+R4
+R5
+Z38 8C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/top_level.vhd
+Z39 FC:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/top_level.vhd
+l0
+L6
+VmDGkkCJ3:PlGEXzJ59Dk@2
+!s100 AigY?;Qj1@FH:9dhfbVTd0
+R8
+32
+R9
+!i10b 1
+R10
+Z40 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/top_level.vhd|
+Z41 !s107 C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/top_level.vhd|
+!i113 1
+R13
+R14
+Artl
+R27
+R15
+R21
+R1
+R2
+R3
+R4
+R33
+l29
+L19
+Vl^COge[n6:0E0<Nl7liW_2
+!s100 X3JQH:R4F1CFC:0eZbm]h1
+R8
+32
+R9
+!i10b 1
+R10
+R40
+R41
+!i113 1
+R13
+R14

@@ -1,0 +1,60 @@
+C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/scheduler.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/scheduler.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package pkg_types
+-- Compiling entity scheduler
+-- Compiling architecture rtl of scheduler
+
+} {} {}} C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/tb_top_level.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/tb_top_level.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package pkg_types
+-- Compiling entity tb_top_level
+-- Compiling architecture tb of tb_top_level
+-- Loading entity top_level
+
+} {} {}} C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/seg7_driver.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/seg7_driver.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity seg7_driver
+-- Compiling architecture rtl of seg7_driver
+
+} {} {}} C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/local_controller.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/local_controller.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package pkg_types
+-- Compiling entity local_controller
+-- Compiling architecture rtl of local_controller
+
+} {} {}} C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/pkg_types.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/pkg_types.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package pkg_types
+
+} {} {}} C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/top_level.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Cloud/Documents/UFRN/Circuitos/Elevador_GPT/top_level.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package pkg_types
+-- Compiling entity top_level
+-- Compiling architecture rtl of top_level
+-- Loading entity scheduler
+-- Loading entity local_controller
+-- Loading entity seg7_driver
+
+} {} {}}

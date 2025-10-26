@@ -1,0 +1,52 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+use work.pkg_types.ALL;
+
+entity tb_top_level is
+end entity;
+
+architecture tb of tb_top_level is
+
+    constant NUM_FLOORS : integer := 4;
+    signal clk, reset   : std_logic := '0';
+    signal req_panel    : call_vector_t(NUM_FLOORS-1 downto 0) := (others=>'0');
+    signal seg7_out     : std_logic_vector(6 downto 0);
+
+begin
+
+    U_TOP: entity work.top_level
+        generic map(NUM_FLOORS => NUM_FLOORS)
+        port map(
+            clk       => clk,
+            reset     => reset,
+            req_panel => req_panel,
+            seg7_out  => seg7_out
+        );
+
+    -- Clock
+    clk_process: process
+    begin
+        while true loop
+            clk <= '0';
+            wait for 5 ns;
+            clk <= '1';
+            wait for 5 ns;
+        end loop;
+    end process;
+
+    -- Stimulus
+    stim_proc: process
+    begin
+        reset <= '1';
+        wait for 20 ns;
+        reset <= '0';
+
+        req_panel <= "1000"; -- Solicita andar 0
+        wait for 50 ns;
+        req_panel <= "0100"; -- Solicita andar 1
+        wait;
+    end process;
+
+end architecture;
+

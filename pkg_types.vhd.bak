@@ -1,0 +1,13 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+package pkg_types is
+
+    -- Tipo para estados do elevador
+    type elevator_state_t is (IDLE, MOVING_UP, MOVING_DOWN, DOOR_OPEN, DOOR_CLOSE);
+
+    -- Tipo para vetor de pedidos (botões pressionados)
+    type call_vector_t is array (natural range <>) of std_logic;
+
+end package;
+
