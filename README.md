@@ -51,24 +51,26 @@ add wave *
 run 2000 ns
 
 Cenários de Teste
+
 Cenário 1: Inicialização e Reset
-tcl
-# Já incluso no testbench - apenas observar:
+
 run 500 ns
+
 Resultado Esperado: Todos elevadores no andar 0, estados IDLE.
 
 Cenário 2: Chamada Externa
-tcl
-# Já incluso no testbench:
+
 run 1000 ns
+
 Resultado Esperado: Um elevador sobe para andar 5 em resposta a call_up(5).
 
-Cenário 3: Concorrência (RECOMENDADO)
-tcl
-# Forçar múltiplas chamadas simultâneas:
+Cenário 3: Concorrência
+
 force -freeze sim:/tb_elevator_system_simple/dest_request1(12) 1 0
 force -freeze sim:/tb_elevator_system_simple/dest_request2(15) 1 0
 run 3000 ns
+
+
 Resultado Esperado: Todos os 3 elevadores movendo-se simultaneamente para andares diferentes.
 
 Comandos de Debug
