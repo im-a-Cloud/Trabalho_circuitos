@@ -2,7 +2,7 @@ Sistema de Controle de Elevadores - VHDL
 Sobre o Projeto
 Sistema digital em VHDL para controle de 3 elevadores em um edifício de 32 andares, implementando arquitetura de dois níveis com controladores individuais por elevador e escalonamento centralizado.
 
-#Características Principais
+##Características Principais
 3 elevadores independentes
 
 32 andares (0 a 31)
