@@ -27,26 +27,34 @@ Passo 1: Preparar Ambiente
 # No console do ModelSim:
 vdel -all
 vlib work
+
+
 Passo 2: Compilação Rápida (Recomendado)
-tcl
+
+
 vdel -all; vlib work; vcom -2002 pkg_types.vhd seg7_driver_32floors.vhd elevator_controller_simple.vhd elevator_system_simple.vhd tb_elevator_system_simple.vhd; vsim work.tb_elevator_system_simple; add wave *; run 3000 ns
 
 Passo 3: Compilação Manual (Passo a Passo)
 
-# 1. Compilar na ORDEM CORRETA:
+Compilar na ORDEM CORRETA:
+
+
 vcom -2002 pkg_types.vhd
 vcom -2002 seg7_driver_32floors.vhd
 vcom -2002 elevator_controller_simple.vhd
 vcom -2002 elevator_system_simple.vhd
 vcom -2002 tb_elevator_system_simple.vhd
 
-# 2. Simular:
+Simular:
+
+
 vsim work.tb_elevator_system_simple
 
-# 3. Adicionar ondas principais:
+Adicionar ondas principais:
+
 add wave *
 
-# 4. Executar teste básico:
+Executar teste básico:
 
 run 2000 ns
 
