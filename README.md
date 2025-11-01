@@ -25,10 +25,12 @@ Requisito: Todos os arquivos na mesma pasta
 
 Passo 1: Preparar Ambiente
 
-
 vdel -all
 vlib work
+
 Passo 2: Compilação Rápida (Recomendado)
+
+
 tcl
 vdel -all; vlib work; vcom -2002 pkg_types.vhd seg7_driver_32floors.vhd elevator_controller_simple.vhd elevator_system_simple.vhd tb_elevator_system_simple.vhd; vsim work.tb_elevator_system_simple; add wave *; run 3000 ns
 
