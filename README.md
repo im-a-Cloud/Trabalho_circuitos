@@ -139,6 +139,17 @@ force -freeze sim:/tb_elevator_system_simple/dest_request2(22) 1 0 ns
 
 run 2000 ns
 
+##Teste 3 - Elevador único
+
+restart -f
+
+run 100 ns
+
+force -freeze sim:/tb_elevator_system_simple/dest_request0(31) 1 0 ns
+
+force -freeze sim:/tb_elevator_system_simple/dest_request1(0) 1 0 ns
+
+run 3000 ns
 
 ## Teste 4 - Verificação Round-Robin
 
