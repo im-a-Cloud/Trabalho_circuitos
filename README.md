@@ -17,19 +17,8 @@ Display 7 segmentos
 
 Escalonamento Round-Robin
 
-Testbench completo
-
-Estrutura de Arquivos
-text
-elevator_system/
-├── pkg_types.vhd                    -- Package com tipos e constantes
-├── seg7_driver_32floors.vhd         -- Driver para display 7 segmentos
-├── elevator_controller_simple.vhd   -- Controlador individual do elevador
-├── elevator_system_simple.vhd       -- Sistema completo (top-level)
-└── tb_elevator_system_simple.vhd    -- Testbench para simulação
 Como Executar
-Pré-requisitos
-ModelSim Intel FPGA Edition
+Programa usado:ModelSim Intel FPGA Edition
 
 Todos os arquivos na mesma pasta
 
