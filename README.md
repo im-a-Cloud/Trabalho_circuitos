@@ -23,15 +23,16 @@ Programa usado:ModelSim Intel FPGA Edition
 Todos os arquivos na mesma pasta
 
 Passo 1: Preparar Ambiente
-tcl
+
 # No console do ModelSim:
 vdel -all
 vlib work
 Passo 2: Compilação Rápida (Recomendado)
 tcl
 vdel -all; vlib work; vcom -2002 pkg_types.vhd seg7_driver_32floors.vhd elevator_controller_simple.vhd elevator_system_simple.vhd tb_elevator_system_simple.vhd; vsim work.tb_elevator_system_simple; add wave *; run 3000 ns
+
 Passo 3: Compilação Manual (Passo a Passo)
-tcl
+
 # 1. Compilar na ORDEM CORRETA:
 vcom -2002 pkg_types.vhd
 vcom -2002 seg7_driver_32floors.vhd
@@ -46,37 +47,45 @@ vsim work.tb_elevator_system_simple
 add wave *
 
 # 4. Executar teste básico:
+
 run 2000 ns
+
 Cenários de Teste
+
 Cenário 1: Inicialização e Reset
-tcl
+
 run 500 ns
 Resultado Esperado: Todos elevadores no andar 0, estados IDLE.
 
 Cenário 2: Chamada Externa
-tcl
+
 run 1000 ns
+
 Resultado Esperado: Um elevador sobe para andar 5 em resposta a call_up(5).
 
 Cenário 3: Concorrência
-tcl
+
 force -freeze sim:/tb_elevator_system_simple/dest_request1(12) 1 0
 force -freeze sim:/tb_elevator_system_simple/dest_request2(15) 1 0
 run 3000 ns
+
 Resultado Esperado: Todos os 3 elevadores movendo-se simultaneamente para andares diferentes.
 
 Cenário 4: Múltiplas Chamadas
-tcl
+
 force -freeze sim:/tb_elevator_system_simple/call_up(2) 1 0
 force -freeze sim:/tb_elevator_system_simple/call_down(8) 1 0
 force -freeze sim:/tb_elevator_system_simple/dest_request0(6) 1 0
 run 4000 ns
+
 Resultado Esperado: Distribuição balanceada entre os elevadores.
 
 Comandos de Debug
+
 Ver Andares Atuais
-tcl
-# Adicionar sinais internos dos elevadores:
+
+Adicionar sinais internos dos elevadores:
+
 add wave -position insertpoint \
 sim:/tb_elevator_system_simple/uut/elevator0/current_floor_int \
 sim:/tb_elevator_system_simple/uut/elevator0/state \
@@ -85,8 +94,9 @@ sim:/tb_elevator_system_simple/uut/elevator1/state \
 sim:/tb_elevator_system_simple/uut/elevator2/current_floor_int \
 sim:/tb_elevator_system_simple/uut/elevator2/state
 Grupos Organizados para Debug
-tcl
-# Criar grupos para cada elevador
+
+Criar grupos para cada elevador
+
 add wave -group "Elevator_0" -position insertpoint \
 sim:/tb_elevator_system_simple/uut/elevator0/current_floor_int \
 sim:/tb_elevator_system_simple/uut/elevator0/state \
