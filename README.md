@@ -17,124 +17,135 @@ Display 7 segmentos
 
 Escalonamento Round-Robin
 
-Como Executar
-Programa usado:ModelSim Intel FPGA Edition
+Testbench completo
 
-Todos os arquivos na mesma pasta
+Como Executar
+Programa usado: ModelSim Intel FPGA Edition
+Requisito: Todos os arquivos na mesma pasta
 
 Passo 1: Preparar Ambiente
 
-# No console do ModelSim:
+
 vdel -all
 vlib work
-
-
 Passo 2: Compilação Rápida (Recomendado)
-
-
+tcl
 vdel -all; vlib work; vcom -2002 pkg_types.vhd seg7_driver_32floors.vhd elevator_controller_simple.vhd elevator_system_simple.vhd tb_elevator_system_simple.vhd; vsim work.tb_elevator_system_simple; add wave *; run 3000 ns
 
+
 Passo 3: Compilação Manual (Passo a Passo)
-
-Compilar na ORDEM CORRETA:
-
 
 vcom -2002 pkg_types.vhd
 vcom -2002 seg7_driver_32floors.vhd
 vcom -2002 elevator_controller_simple.vhd
 vcom -2002 elevator_system_simple.vhd
 vcom -2002 tb_elevator_system_simple.vhd
-
-Simular:
-
-
 vsim work.tb_elevator_system_simple
-
-Adicionar ondas principais:
-
 add wave *
-
-Executar teste básico:
-
 run 2000 ns
+
+
+Demonstração Completa no ModelSim
+
+Teste 1 - Comportamentos Independentes
+tcl
+restart -f
+run 100 ns
+force -freeze sim:/tb_elevator_system_simple/call_up(0) 1 0 ns
+run 200 ns
+force -freeze sim:/tb_elevator_system_simple/dest_request0(5) 1 0 ns
+run 800 ns
+force -freeze sim:/tb_elevator_system_simple/dest_request1(12) 1 0 ns
+run 1000 ns
+force -freeze sim:/tb_elevator_system_simple/dest_request2(20) 1 0 ns
+run 1500 ns
+force -freeze sim:/tb_elevator_system_simple/call_down(8) 1 0 ns
+run 500 ns
+force -freeze sim:/tb_elevator_system_simple/call_up(15) 1 0 ns
+run 500 ns
+force -freeze sim:/tb_elevator_system_simple/call_down(25) 1 0 ns
+run 1000 ns
+force -freeze sim:/tb_elevator_system_simple/dest_request0(10) 1 0 ns
+run 500 ns
+force -freeze sim:/tb_elevator_system_simple/dest_request1(3) 1 0 ns
+run 500 ns
+force -freeze sim:/tb_elevator_system_simple/dest_request2(18) 1 0 ns
+run 2000 ns
+
+Teste 2 - Cenário Realista
+
+restart -f
+run 100 ns
+force -freeze sim:/tb_elevator_system_simple/dest_request0(3) 1 0 ns
+run 800 ns
+force -freeze sim:/tb_elevator_system_simple/dest_request0(6) 1 0 ns
+run 800 ns
+force -freeze sim:/tb_elevator_system_simple/dest_request0(2) 1 0 ns
+force -freeze sim:/tb_elevator_system_simple/dest_request1(10) 1 0 ns
+run 600 ns
+force -freeze sim:/tb_elevator_system_simple/dest_request1(15) 1 0 ns
+run 600 ns
+force -freeze sim:/tb_elevator_system_simple/dest_request1(8) 1 0 ns
+force -freeze sim:/tb_elevator_system_simple/dest_request2(25) 1 0 ns
+run 400 ns
+force -freeze sim:/tb_elevator_system_simple/dest_request2(30) 1 0 ns
+run 400 ns
+force -freeze sim:/tb_elevator_system_simple/dest_request2(22) 1 0 ns
+run 2000 ns
+
+
+Teste 4 - Verificação Round-Robin
+
+
+restart -f
+run 100 ns
+force -freeze sim:/tb_elevator_system_simple/call_up(3) 1 0 ns
+run 100 ns
+force -freeze sim:/tb_elevator_system_simple/call_up(7) 1 0 ns
+run 100 ns
+force -freeze sim:/tb_elevator_system_simple/call_up(11) 1 0 ns
+run 100 ns
+force -freeze sim:/tb_elevator_system_simple/call_up(15) 1 0 ns
+run 2000 ns
+
 
 Cenários de Teste
 
 Cenário 1: Inicialização e Reset
 
 run 500 ns
+
 Resultado Esperado: Todos elevadores no andar 0, estados IDLE.
 
 Cenário 2: Chamada Externa
 
+
 run 1000 ns
+
 
 Resultado Esperado: Um elevador sobe para andar 5 em resposta a call_up(5).
 
 Cenário 3: Concorrência
 
-force -freeze sim:/tb_elevator_system_simple/dest_request1(12) 1 0
-force -freeze sim:/tb_elevator_system_simple/dest_request2(15) 1 0
+
+force -freeze sim:/tb_elevator_system_simple/dest_request1(12) 1 0 ns
+force -freeze sim:/tb_elevator_system_simple/dest_request2(15) 1 0 ns
 run 3000 ns
+
 
 Resultado Esperado: Todos os 3 elevadores movendo-se simultaneamente para andares diferentes.
 
 Cenário 4: Múltiplas Chamadas
 
-force -freeze sim:/tb_elevator_system_simple/call_up(2) 1 0
-force -freeze sim:/tb_elevator_system_simple/call_down(8) 1 0
-force -freeze sim:/tb_elevator_system_simple/dest_request0(6) 1 0
+
+force -freeze sim:/tb_elevator_system_simple/call_up(2) 1 0 ns
+force -freeze sim:/tb_elevator_system_simple/call_down(8) 1 0 ns
+force -freeze sim:/tb_elevator_system_simple/dest_request0(6) 1 0 ns
+
 run 4000 ns
 
 Resultado Esperado: Distribuição balanceada entre os elevadores.
 
-Comandos de Debug
-
-Ver Andares Atuais
-
-Adicionar sinais internos dos elevadores:
-
-add wave -position insertpoint \
-sim:/tb_elevator_system_simple/uut/elevator0/current_floor_int \
-sim:/tb_elevator_system_simple/uut/elevator0/state \
-sim:/tb_elevator_system_simple/uut/elevator1/current_floor_int \
-sim:/tb_elevator_system_simple/uut/elevator1/state \
-sim:/tb_elevator_system_simple/uut/elevator2/current_floor_int \
-sim:/tb_elevator_system_simple/uut/elevator2/state
-Grupos Organizados para Debug
-
-Criar grupos para cada elevador
-
-add wave -group "Elevator_0" -position insertpoint \
-sim:/tb_elevator_system_simple/uut/elevator0/current_floor_int \
-sim:/tb_elevator_system_simple/uut/elevator0/state \
-sim:/tb_elevator_system_simple/uut/elevator0/door_timer \
-sim:/tb_elevator_system_simple/uut/elevator0/move_timer
-
-add wave -group "Elevator_1" -position insertpoint \
-sim:/tb_elevator_system_simple/uut/elevator1/current_floor_int \
-sim:/tb_elevator_system_simple/uut/elevator1/state \
-sim:/tb_elevator_system_simple/uut/elevator1/door_timer \
-sim:/tb_elevator_system_simple/uut/elevator1/move_timer
-
-add wave -group "Elevator_2" -position insertpoint \
-sim:/tb_elevator_system_simple/uut/elevator2/current_floor_int \
-sim:/tb_elevator_system_simple/uut/elevator2/state \
-sim:/tb_elevator_system_simple/uut/elevator2/door_timer \
-sim:/tb_elevator_system_simple/uut/elevator2/move_timer
-Verificar Valores em Tempo Específico
-tcl
-# Ver andares atuais em 1500ns:
-examine -time 1500 ns /tb_elevator_system_simple/uut/elevator0/current_floor_int
-examine -time 1500 ns /tb_elevator_system_simple/uut/elevator1/current_floor_int
-examine -time 1500 ns /tb_elevator_system_simple/uut/elevator2/current_floor_int
-Monitorar Requisições
-tcl
-# Ver distribuição de chamadas
-add wave -position insertpoint \
-sim:/tb_elevator_system_simple/uut/elevator_requests0 \
-sim:/tb_elevator_system_simple/uut/elevator_requests1 \
-sim:/tb_elevator_system_simple/uut/elevator_requests2
 Especificações Técnicas
 Parâmetros Temporais
 Tempo de porta aberta: 300 ciclos de clock (3 segundos)
@@ -158,3 +169,19 @@ Round-Robin: Distribui chamadas externas sequencialmente entre os elevadores
 Chamadas internas: Atendidas pelo elevador específico
 
 Prioridade: Chamadas no andar atual > direção atual > outras direções
+
+Funcionalidades Validadas
+
+Inicialização e reset
+
+Comportamento independente dos elevadores
+
+Movimento em direções opostas
+
+Escalonamento round-robin
+
+Temporização realista
+
+Operação estável em cenários complexos
+
+Sincronização entre andares e displays
