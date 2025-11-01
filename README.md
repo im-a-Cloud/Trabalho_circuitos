@@ -225,6 +225,7 @@ Tempo entre andares: 200 ciclos de clock (2 segundos)
 Clock: 100 MHz (período de 10 ns)
 
 Estados da Máquina de Estado
+
 STATE_IDLE: Aguardando comandos
 
 STATE_MOVING_UP: Subindo para andar superior
