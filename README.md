@@ -184,7 +184,9 @@ Resultado Esperado: Um elevador sobe para andar 5 em resposta a call_up(5).
 
 
 force -freeze sim:/tb_elevator_system_simple/dest_request1(12) 1 0 ns
+
 force -freeze sim:/tb_elevator_system_simple/dest_request2(15) 1 0 ns
+
 run 3000 ns
 
 
