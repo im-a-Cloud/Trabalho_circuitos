@@ -1,5 +1,5 @@
 Sistema de Controle de Elevadores - VHDL
-Sobre o Projeto
+## Sobre o Projeto
 Sistema digital em VHDL para controle de 3 elevadores em um edifício de 32 andares, implementando arquitetura de dois níveis com controladores individuais por elevador e escalonamento centralizado.
 
 ## Características Principais
@@ -19,22 +19,22 @@ Escalonamento Round-Robin
 
 Testbench completo
 
-Como Executar
+## Como Executar
 Programa usado: ModelSim Intel FPGA Edition
 Requisito: Todos os arquivos na mesma pasta
 
-Passo 1: Preparar Ambiente
+## Passo 1: Preparar Ambiente
 
 vdel -all
 vlib work
 
-Passo 2: Compilação Rápida (Recomendado)
+## Passo 2: Compilação Rápida (Recomendado)
 
 
 vdel -all; vlib work; vcom -2002 pkg_types.vhd seg7_driver_32floors.vhd elevator_controller_simple.vhd elevator_system_simple.vhd tb_elevator_system_simple.vhd; vsim work.tb_elevator_system_simple; add wave *; run 3000 ns
 
 
-Passo 3: Compilação Manual (Passo a Passo)
+## Passo 3: Compilação Manual (Passo a Passo)
 
 vcom -2002 pkg_types.vhd
 
@@ -53,9 +53,9 @@ add wave *
 run 2000 ns
 
 
-Demonstração Completa no ModelSim
+### Demonstração Completa no ModelSim
 
-Teste 1 - Comportamentos Independentes
+## Teste 1 - Comportamentos Independentes
 
 restart -f
 
@@ -101,7 +101,7 @@ force -freeze sim:/tb_elevator_system_simple/dest_request2(18) 1 0 ns
 
 run 2000 ns
 
-Teste 2 - Cenário Realista
+## Teste 2 - Cenário Realista
 
 restart -f
 
@@ -140,7 +140,7 @@ force -freeze sim:/tb_elevator_system_simple/dest_request2(22) 1 0 ns
 run 2000 ns
 
 
-Teste 4 - Verificação Round-Robin
+## Teste 4 - Verificação Round-Robin
 
 
 restart -f
@@ -164,15 +164,15 @@ force -freeze sim:/tb_elevator_system_simple/call_up(15) 1 0 ns
 run 2000 ns
 
 
-Cenários de Teste
+### Cenários de Teste
 
-Cenário 1: Inicialização e Reset
+## Cenário 1: Inicialização e Reset
 
 run 500 ns
 
 Resultado Esperado: Todos elevadores no andar 0, estados IDLE.
 
-Cenário 2: Chamada Externa
+## Cenário 2: Chamada Externa
 
 
 run 1000 ns
@@ -180,7 +180,7 @@ run 1000 ns
 
 Resultado Esperado: Um elevador sobe para andar 5 em resposta a call_up(5).
 
-Cenário 3: Concorrência
+## Cenário 3: Concorrência
 
 
 force -freeze sim:/tb_elevator_system_simple/dest_request1(12) 1 0 ns
@@ -190,7 +190,7 @@ run 3000 ns
 
 Resultado Esperado: Todos os 3 elevadores movendo-se simultaneamente para andares diferentes.
 
-Cenário 4: Múltiplas Chamadas
+## Cenário 4: Múltiplas Chamadas
 
 
 force -freeze sim:/tb_elevator_system_simple/call_up(2) 1 0 ns
@@ -203,7 +203,7 @@ run 4000 ns
 
 Resultado Esperado: Distribuição balanceada entre os elevadores.
 
-Especificações Técnicas
+## Especificações Técnicas
 Parâmetros Temporais
 Tempo de porta aberta: 300 ciclos de clock (3 segundos)
 
