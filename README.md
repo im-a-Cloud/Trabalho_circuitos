@@ -38,61 +38,106 @@ vdel -all; vlib work; vcom -2002 pkg_types.vhd seg7_driver_32floors.vhd elevator
 Passo 3: Compilação Manual (Passo a Passo)
 
 vcom -2002 pkg_types.vhd
+
 vcom -2002 seg7_driver_32floors.vhd
+
 vcom -2002 elevator_controller_simple.vhd
+
 vcom -2002 elevator_system_simple.vhd
+
 vcom -2002 tb_elevator_system_simple.vhd
+
 vsim work.tb_elevator_system_simple
+
 add wave *
+
 run 2000 ns
 
 
 Demonstração Completa no ModelSim
 
 Teste 1 - Comportamentos Independentes
-tcl
+
 restart -f
+
 run 100 ns
+
 force -freeze sim:/tb_elevator_system_simple/call_up(0) 1 0 ns
+
 run 200 ns
+
 force -freeze sim:/tb_elevator_system_simple/dest_request0(5) 1 0 ns
+
 run 800 ns
+
 force -freeze sim:/tb_elevator_system_simple/dest_request1(12) 1 0 ns
+
 run 1000 ns
+
 force -freeze sim:/tb_elevator_system_simple/dest_request2(20) 1 0 ns
+
 run 1500 ns
+
 force -freeze sim:/tb_elevator_system_simple/call_down(8) 1 0 ns
+
 run 500 ns
+
 force -freeze sim:/tb_elevator_system_simple/call_up(15) 1 0 ns
+
 run 500 ns
+
 force -freeze sim:/tb_elevator_system_simple/call_down(25) 1 0 ns
+
 run 1000 ns
+
 force -freeze sim:/tb_elevator_system_simple/dest_request0(10) 1 0 ns
+
 run 500 ns
+
 force -freeze sim:/tb_elevator_system_simple/dest_request1(3) 1 0 ns
+
 run 500 ns
+
 force -freeze sim:/tb_elevator_system_simple/dest_request2(18) 1 0 ns
+
 run 2000 ns
 
 Teste 2 - Cenário Realista
 
 restart -f
+
 run 100 ns
+
 force -freeze sim:/tb_elevator_system_simple/dest_request0(3) 1 0 ns
+
 run 800 ns
+
 force -freeze sim:/tb_elevator_system_simple/dest_request0(6) 1 0 ns
+
 run 800 ns
+
 force -freeze sim:/tb_elevator_system_simple/dest_request0(2) 1 0 ns
+
 force -freeze sim:/tb_elevator_system_simple/dest_request1(10) 1 0 ns
+
 run 600 ns
+
 force -freeze sim:/tb_elevator_system_simple/dest_request1(15) 1 0 ns
+
 run 600 ns
+
 force -freeze sim:/tb_elevator_system_simple/dest_request1(8) 1 0 ns
+
 force -freeze sim:/tb_elevator_system_simple/dest_request2(25) 1 0 ns
+
 run 400 ns
+
 force -freeze sim:/tb_elevator_system_simple/dest_request2(30) 1 0 ns
+
 run 400 ns
+
 force -freeze sim:/tb_elevator_system_simple/dest_request2(22) 1 0 ns
+
 run 2000 ns
 
 
@@ -100,14 +145,23 @@ Teste 4 - Verificação Round-Robin
 
 
 restart -f
+
 run 100 ns
+
 force -freeze sim:/tb_elevator_system_simple/call_up(3) 1 0 ns
+
 run 100 ns
+
 force -freeze sim:/tb_elevator_system_simple/call_up(7) 1 0 ns
+
 run 100 ns
+
 force -freeze sim:/tb_elevator_system_simple/call_up(11) 1 0 ns
+
 run 100 ns
+
 force -freeze sim:/tb_elevator_system_simple/call_up(15) 1 0 ns
+
 run 2000 ns
 
 
@@ -141,7 +195,9 @@ Cenário 4: Múltiplas Chamadas
 
 
 force -freeze sim:/tb_elevator_system_simple/call_up(2) 1 0 ns
+
 force -freeze sim:/tb_elevator_system_simple/call_down(8) 1 0 ns
+
 force -freeze sim:/tb_elevator_system_simple/dest_request0(6) 1 0 ns
 
 run 4000 ns
