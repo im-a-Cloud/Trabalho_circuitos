@@ -28,10 +28,11 @@ tcl
 # No console do ModelSim:
 vdel -all
 vlib work
+
 Passo 2: Compilação Rápida (Recomendado)
-tcl
-# Compila e executa TUDO automaticamente:
+
 vdel -all; vlib work; vcom -work work -2002 pkg_types.vhd seg7_driver.vhd elevator_controller_simple.vhd elevator_system_simple.vhd tb_elevator_system_simple.vhd; vsim work.tb_elevator_system_simple; add wave *; run 3000 ns
+
 Passo 3: Compilação Manual (Passo a Passo)
 tcl
 # 1. Compilar na ORDEM CORRETA:
